@@ -1,0 +1,106 @@
+#orders{
+    overflow-y: auto;
+    border-left: 1px solid $placeholder;
+
+    .sticky-header{
+        @extend .pt-4, .sticky-top;
+        padding-right: $side-margin;
+        padding-left: $side-margin;
+        background-color: $body-bg;
+
+        .actions{
+            @include flexbox(center, flex-start);
+            margin-bottom: $side-margin;
+
+            .btn-coupon{
+                @extend .me-2;
+            }
+        }
+    }
+
+    .menu-list{
+        padding: 0 $side-margin;
+
+        .card{
+            @include flexbox(center, flex-start);
+            flex-direction: row;
+            box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+
+            .card-img{
+                width: 80px;
+                height: 70px;
+                object-fit: cover;
+                @extend .radius;
+                padding: 0;
+            }
+
+            .card-details{
+                h5{
+                    font-weight: 600;
+                }
+            }
+
+            .order-qty{
+                @include flexbox(center, center);
+
+                .qty{
+                    text-align: center;
+                    width: 50px;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                }
+
+                button{
+                    height: 40px;
+                    width: 40px;
+                    background-color: #EEEEEE;
+                    color: $secondary;
+                }
+            }
+
+            .card-actions{
+                @include flexbox(center,  flex-end);
+
+                button{
+                    width: 40px;
+                    height: 40px;
+                    color: $secondary;
+                }
+            }
+        }
+
+        .menu-is-empty{
+            text-align: center;
+            @extend .py-4, .text-muted;
+
+            .feather{
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    .transactions{
+        padding-right: $side-margin;
+        padding-left: $side-margin;
+        @extend .pb-4;
+
+        .transaction-breakdown{
+            .breakdown{
+                margin-bottom: 10px;
+                @include flexbox(center, space-between);
+
+                span:not[id='coupon']{
+                    @extend .text-muted;
+                    font-weight: 500;
+                }
+
+                #coupon{
+                    @extend .text-danger;
+                }
+            }
+        }
+    }
+}

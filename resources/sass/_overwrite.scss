@@ -1,0 +1,101 @@
+.form-control{
+    padding: 10px 45px;
+    height: 50px;
+    @extend .radius;
+    background-color: $placeholder !important;
+    border: none;
+    outline: none;
+
+    :focus{
+        background-color: #fff;
+    }
+}
+
+.btn{
+    border-radius: $radius;
+    height: 50px;
+    padding: 20px;
+    @include flexbox(center, center);
+}
+
+.btn-primary{
+    box-shadow: $active-shadow;
+    color: #fff;
+}
+
+.btn-primary-outline{
+    color: $primary;
+    background-color: unquote($primary + "22");
+}
+
+.btn-danger-outline{
+    color: $danger;
+    background-color: unquote($danger + "22");
+}
+
+.nav-tabs{
+    .nav-item{
+        .nav-link{
+            font-weight: 500;
+            color: $secondary;
+            border-color: transparent;
+        }
+
+        .active{
+            color: $primary;
+            border-bottom: 3px solid $primary;
+        }
+    }
+}
+
+.card{
+    padding: 15px;
+    border: 1px solid transparent;
+    @extend .radius;
+    outline: none;
+    transition: all .3s ease;
+    background-color: $body-bg;
+    box-shadow:  9px 9px 18px #dddddd, -9px -9px 18px #ffffff;
+
+    .img-fluid{
+        width: 100%;
+        height: 166px;
+        object-fit: cover;
+        @extend .radius;
+    }
+
+    .card-header{
+        background-color: transparent;
+    }
+
+    .card-body{
+        text-align: left;
+        padding: 0;
+        width: 100%;
+        @include flexbox(center, space-between);
+
+        .card-text{
+            width: 100%;
+            @include flexbox(center, space-between);
+
+            .name{
+                @extend .text-muted;
+                font-size: .9em;
+            }
+
+            .price{
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+button.card{
+    &:hover{
+        border: 1px solid $placeholder;
+    }
+
+    &:active{
+        box-shadow: inset 9px 9px 18px #dddddd, inset -9px -9px 18px #ffffff;
+    }
+}
